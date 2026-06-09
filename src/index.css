@@ -53,7 +53,6 @@
 }
 
 #root {
-  width: 1126px;
   max-width: 100%;
   margin: 0 auto;
   text-align: center;
@@ -110,4 +109,22 @@ code {
   line-height: 135%;
   padding: 4px 8px;
   background: var(--code-bg);
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .nav-bar {
+    @apply flex items-center gap-4 border-b border-gray-300 p-5;
+  }
+
+  .title {
+    @apply font-bold text-5xl mr-auto;
+  }
+
+  .nav-item {
+    @apply text-gray-700 hover:text-black cursor-pointer;
+  }
 }
