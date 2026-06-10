@@ -1,7 +1,7 @@
 export type Habit = {
-  id: number;
+  id: string;
   name: string;
   description?: string;
   createdAt: string;
-  completedDate: string[];
+  completedDates: string[];
 };
