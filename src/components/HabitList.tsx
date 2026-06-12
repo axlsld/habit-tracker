@@ -9,7 +9,7 @@ interface Props {
 
 const HabitList = ({ habits, onDelete, onToggle }: Props) => {
   return (
-    <div>
+    <div className="grid grid-cols-2 gap-2">
       {habits.map((h) => {
         return (
           <HabitsCard

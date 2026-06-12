@@ -39,7 +39,7 @@ const HabitForm = ({ onAdd }: Props) => {
   return (
     <>
       <form
-        className="w-full px-10 mx-auto bg-white p-3 rounded-2xl"
+        className="w-full mx-auto bg-white mb-5 rounded-2xl"
         onSubmit={handleSubmit}
       >
         <h2 className="p-3">Add a New Habit!</h2>
@@ -51,6 +51,7 @@ const HabitForm = ({ onAdd }: Props) => {
             Name
           </label>
           <input
+            required
             id='name'
             value={name}
             onChange={(e) => setName(e.target.value)}
@@ -67,6 +68,7 @@ const HabitForm = ({ onAdd }: Props) => {
             Description
           </label>
           <textarea
+            required
             id='desc'
             value={desc}
             onChange={(e) => setDesc(e.target.value)}

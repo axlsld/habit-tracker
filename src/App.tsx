@@ -10,14 +10,16 @@ function App() {
 
   return (
     <>
-      <NavBar />
-      <HabitForm onAdd={addHabit}></HabitForm>
-      {/* <HabitsCard habits={habits} onDelete={deleteHabit} onToggle={toggleToday}></HabitsCard> */}
-      <HabitList
-        habits={habits}
-        onDelete={deleteHabit}
-        onToggle={toggleToday}
-      />
+        <NavBar />
+      <div className="p-10">
+        <HabitForm onAdd={addHabit}></HabitForm>
+        {/* <HabitsCard habits={habits} onDelete={deleteHabit} onToggle={toggleToday}></HabitsCard> */}
+        <HabitList
+          habits={habits}
+          onDelete={deleteHabit}
+          onToggle={toggleToday}
+        />
+      </div>
     </>
   );
 }

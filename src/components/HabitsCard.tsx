@@ -13,15 +13,27 @@ const HabitsCard = ({ habits, onDelete, onToggle }: Props) => {
   const doneToday = habits.completedDates.includes(today);
   return (
     <>
-      <div>
+      <div className="border-1 rounded-lg p-3 min-h-50 flex flex-col">
         <h2>{habits.name}</h2>
         <p>{habits.description}</p>
-        <div className="w-full px-10 mx-auto bg-white p-3 rounded-2xl">
-          <button  className="w-full bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded-lg transition duration-200 ease-in-out shadow-md hover:shadow-lg" onClick={() => onToggle(habits.id)}>
+        <div className="flex mx-3 space-x-4 bg-white rounded-2xl mt-auto">
+          <button
+            className={`w-full font-medium py-2 px-4 rounded-lg transition duration-200 ease-in-out shadow-md hover:shadow-lg border
+            ${
+              doneToday
+                ? "bg-green-600 text-white border-green-600 hover:bg-green-700"
+                : "bg-white text-green-600 border-green-600 hover:bg-green-50"
+            }`}
+            onClick={() => onToggle(habits.id)}
+          >
             {doneToday ? "✓ Done" : "Mark Done"}
           </button>
-          <button className="w-full bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 rounded-lg transition duration-200 ease-in-out shadow-md hover:shadow-lg" onClick={() => onDelete(habits.id)}>Delete</button>
-
+          <button
+            className="w-full bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 rounded-lg transition duration-200 ease-in-out shadow-md hover:shadow-lg"
+            onClick={() => onDelete(habits.id)}
+          >
+            Delete
+          </button>
         </div>
       </div>
     </>
