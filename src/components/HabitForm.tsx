@@ -1,4 +1,5 @@
-import { useRef, useState, type FormEvent } from "react";
+import { useState, type FormEvent } from "react";
+import type { HabitInput } from "../types/Habit";
 
 interface Habit {
   name: string;
@@ -6,12 +7,12 @@ interface Habit {
 }
 
 interface Props {
-  onAdd: (habit: Habit) => void;
+  onAdd: (habit: HabitInput) => void;
 }
 
 const HabitForm = ({ onAdd }: Props) => {
-  const [name, setName] = useState('');
-  const [desc, setDesc] = useState('');
+  const [name, setName] = useState("");
+  const [desc, setDesc] = useState("");
 
   // const nameRef = useRef<HTMLInputElement>(null);
   // const descRef = useRef<HTMLTextAreaElement>(null);
@@ -28,11 +29,11 @@ const HabitForm = ({ onAdd }: Props) => {
 
     onAdd({
       name: name,
-      desc: desc
+      description: desc,
     });
 
-    setName('');
-    setDesc('');
+    setName("");
+    setDesc("");
   };
 
   return (
@@ -50,7 +51,7 @@ const HabitForm = ({ onAdd }: Props) => {
             Name
           </label>
           <input
-            id={name}
+            id='name'
             value={name}
             onChange={(e) => setName(e.target.value)}
             className="w-full px-4 py-3 border border-gray-300 rounded-xl
@@ -66,7 +67,7 @@ const HabitForm = ({ onAdd }: Props) => {
             Description
           </label>
           <textarea
-            id={desc}
+            id='desc'
             value={desc}
             onChange={(e) => setDesc(e.target.value)}
             className="w-full align-text-top h-40 px-4 py-3 border border-gray-300 rounded-xl

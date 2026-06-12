@@ -5,3 +5,8 @@ export type Habit = {
   createdAt: string;
   completedDates: string[];
 };
+
+export interface HabitInput {
+  name: string;
+  description: string;
+}
